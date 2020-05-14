@@ -1,9 +1,9 @@
-const { NODE_ENV } = require('./config');
+const { CLIENT_ORIGIN } = require('./config');
 const logger = require('./logger')
 
 function errorHandler(error, req, res, next) {
 	let response;
-	if (NODE_ENV === 'production') {
+	if (CLIENT_ORIGIN === 'production') {
 		response = { error: { message: 'server error' } };
 	} else {
 		console.error(error);
