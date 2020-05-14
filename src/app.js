@@ -6,10 +6,12 @@ const cors = require('cors');
 const { NODE_ENV } = require('./config')
 const validateBearerToken = require('./validate-token');
 const errorHandler = require('./error-handler');
+const morganSetting = process.env.NODE_ENV === 'production' ? 'tiny' : 'common'
 
 const app = express();
 
-app.use(morgan((NODE_ENV === 'production') ? 'tiny' : 'common', { skip: () => NODE_ENV === 'test' }))
+app.use(morgan(morganSetting));
+
 app.use(helmet());
 app.use(cors());
 app.use(validateBearerToken);
