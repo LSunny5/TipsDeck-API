@@ -9,8 +9,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 1.',
             sourcetitle: 'Test Tip 1 Came From',
             sourceurl: 'https://www.test.com/tip1',
-            rating: 5.0,
-            numRaters: 10, 
+            rating: "5.0",
+            numraters: 10, 
         },
         {
             id: 2,
@@ -20,8 +20,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 2.',
             sourcetitle: 'Test Tip 2 Came From',
             sourceurl: 'https://www.test.com/tip2',
-            rating: 4.0,
-            numRaters: 9,  
+            rating: "4.0",
+            numraters: 9,  
         },
         {
             id: 3,
@@ -31,8 +31,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 3.',
             sourcetitle: 'Test Tip 3 Came From',
             sourceurl: 'https://www.test.com/tip3',
-            rating: 3.0,
-            numRaters: 8,  
+            rating: "3.0",
+            numraters: 8,  
         },
         {
             id: 4,
@@ -42,8 +42,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 4.',
             sourcetitle: 'Test Tip 4 Came From',
             sourceurl: 'https://www.test.com/tip4',
-            rating: 2.0,
-            numRaters: 7, 
+            rating: "2.0",
+            numraters: 7, 
         },
         {
             id: 5,
@@ -53,8 +53,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 5.',
             sourcetitle: 'Test Tip 5 Came From',
             sourceurl: 'https://www.test.com/tip5',
-            rating: 1.0,
-            numRaters: 6, 
+            rating: "1.0",
+            numraters: 6, 
         },
         {
             id: 6,
@@ -64,8 +64,8 @@ function makeTipsArray() {
             directions: 'These are the directions for test Tip 6.',
             sourcetitle: 'Test Tip 6 Came From',
             sourceurl: 'https://www.test.com/tip1',
-            rating: 0.0,
-            numRaters: 5, 
+            rating: "0.0",
+            numraters: 5, 
         },
     ];
 }
@@ -81,13 +81,13 @@ function makeMaliciousTip() {
         sourcetitle: 'Naughty URL title <script>alert("xss");</script>',
         sourceurl: `<img src="https://url.to.file.which/does-not.exist" onerror="alert(document.cookie);">`,
         rating: 0.0,
-        numRaters: 0
+        numraters: 0
     }
     const expectedTip = {
         ...maliciousTip,
         tipname: 'Naughty Tip Name &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
         tipdescription: `Bad description image <img src="https://url.to.file.which/does-not.exist">. But not <strong>TOO</strong> bad.`,
-        directions: `Bad description image <img src="https://url.to.file.which/does-not.exist">. But not <strong>TOO</strong> bad.`,
+        directions: `Bad direction image <img src="https://url.to.file.which/does-not.exist">. But not <strong>TOO</strong> bad.`,
         sourceurl: `<img src="https://url.to.file.which/does-not.exist">`,
         sourcetitle: 'Naughty URL title &lt;script&gt;alert(\"xss\");&lt;/script&gt;',
     }

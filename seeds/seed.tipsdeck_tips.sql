@@ -1,5 +1,5 @@
 BEGIN;
-INSERT INTO tipsdeck_tips (category_id, tipname, tipdescription, directions, sourcetitle, sourceurl, rating, numRaters)
+INSERT INTO tipsdeck_tips (category_id, tipname, tipdescription, directions, sourcetitle, sourceurl, rating, numraters)
 VALUES
     (11, 'Hiccup Cure', 'Have a hiccup you cannot get rid of?  The theory to this trick is that it triggers a gag reflex that overrides hiccups.', 'Stick a cotton swab in your mouth and tickle the uvula.', '"Urawaza": 6 Fascinating Japanese Life Hacks', 'https://www.lifehack.org/articles/lifestyle/%e2%80%9curawaza%e2%80%9d-6-fascinating-japanese-life-hacks.html', 4.5, 5),
     (4, 'Stop Crying Baby', 'Provided baby has fully met all other needs, try this technique to calm the child.  The sound mimics the sound of being in the mother''s womb.', 'Sip some water and swish it in your mouth around the baby''s ear.', '"Urawaza": 6 Fascinating Japanese Life Hacks', 'https://www.lifehack.org/articles/lifestyle/%e2%80%9curawaza%e2%80%9d-6-fascinating-japanese-life-hacks.html', 4.8, 6),

@@ -12,5 +12,5 @@ CREATE TABLE tipsdeck_tips (
     sourcetitle TEXT, 
     sourceurl TEXT,
     rating NUMERIC (2, 1), 
-    numRaters INTEGER
+    numraters INTEGER
 );

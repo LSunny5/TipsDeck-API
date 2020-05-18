@@ -16,7 +16,7 @@ describe('Category Endpoints for TipsDeck', function () {
     //delete data from table after test is over
     after('disconnect from db', () => db.destroy());
     before('clean the table', () => db.raw('TRUNCATE tipsdeck_categories, tipsdeck_tips RESTART IDENTITY CASCADE'));
-    afterEach('cleanup', () => db.raw('TRUNCATE tipsdeck_categories, tipsdeck_tips RESTART IDENTITY CASCADE'));
+    afterEach('cleanup', () => db.raw('TRUNCATE tipsdeck_tips, tipsdeck_categories RESTART IDENTITY CASCADE'));
 
     //test for unauthorized requests at each endpoint for categories
     describe(`Unauthorized requests`, () => {
@@ -112,28 +112,20 @@ describe('Category Endpoints for TipsDeck', function () {
         });
 
         describe(`POST /api/Category`, () => {
-            const testCat = makeCategoriesArray();
-
-            beforeEach('insert categories', () => {
-                return db
-                    .into('tipsdeck_categories')
-                    .insert(testCat)
-            })
-
-            context(`creates a category, responding with 201 and the new category`, () => {
+            it(`creates a category, responding with 201 and the new category`, () => {
                 const newCat = {
                     category: 'Test Category Post'
                 }
 
                 return supertest(app)
                     .post('/api/Category')
-                    .send(newCat)
                     .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
+                    .send(newCat)
                     .expect(201)
                     .expect(res => {
-                        expect(res.body).to.have.property('id')
                         expect(res.body.category).to.eql(newCat.category)
-                        expect(res.headers.location).to.eql(`/api/Category/${res.body.id}`)
+                        expect(res.body).to.have.property('id')
+                        expect(res.headers.location).to.eql(`/api/Category/${newCat.id}`)
                     })
                     .then(res =>
                         supertest(app)
