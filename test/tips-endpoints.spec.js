@@ -145,7 +145,7 @@ describe('Tips Endpoints for TipsDeck', function () {
         });
 
         describe(`POST /api/Tips`, () => {
-             /*it(`creates a tip, responding with 201 and the new tip`, () => {                
+             context(`creates a tip, responding with 201 and the new tip`, () => {                
                 const newTip = {
                     category_id: 1,
                     tipname: 'PostTest1',
@@ -179,7 +179,7 @@ describe('Tips Endpoints for TipsDeck', function () {
                             .set('Authorization', `Bearer ${process.env.API_TOKEN}`)
                             .expect(res.body)
                     );
-            }); */
+            }); 
 
             const requiredFields = ['category_id', 'tipname', 'tipdescription', 'directions', 'sourcetitle', 'sourceurl', 'rating', 'numraters']
             requiredFields.forEach(field => {
