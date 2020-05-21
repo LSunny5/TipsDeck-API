@@ -28,7 +28,7 @@ function getTipValidationError({ tipname, sourcetitle, rating, numraters }) {
 		};
 	}
 
-	if (Number.isInteger(numraters)) {
+	if (Number.isInteger(numraters || numraters === 0)) {
 		logger.error(`You have given an invalid number of raters`);
 		return {
 			error: {
