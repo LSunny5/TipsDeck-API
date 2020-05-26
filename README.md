@@ -190,6 +190,7 @@ Node, Express, Knex, PostgreSQL, Postgrator
 
 ### Express Boilerplate Used
 Boilerplate project used for starting this project.
+Template has cors, dotenv, express, helmet, morgan, and winston
 
 ### Scripts
 Start the application `npm start`
