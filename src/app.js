@@ -9,8 +9,8 @@ const { CLIENT_ORIGIN } = require('./config') //instead of NODE_ENV
 const validateBearerToken = require('./validate-token');
 const errorHandler = require('./error-handler');
 
-const categoriesRouter = require('../categories/categories-router');
-const tipsRouter = require('../tips/tips-router');
+const categoriesRouter = require('./categories/categories-router');
+const tipsRouter = require('./tips/tips-router');
 
 const app = express();
 

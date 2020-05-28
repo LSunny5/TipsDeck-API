@@ -1,4 +1,4 @@
-const logger = require('../src/logger');
+const logger = require('../logger');
 
 //validate the values entered by the user
 function getCategoryValidationError({ category }) {

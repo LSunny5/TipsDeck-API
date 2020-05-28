@@ -1,4 +1,4 @@
-const logger = require('../src/logger');
+const logger = require('../logger');
 
 function getTipValidationError({ tipname, sourcetitle, rating, numraters }) {
     if (tipname && (tipname.length < 3 || tipname.length > 100)) {

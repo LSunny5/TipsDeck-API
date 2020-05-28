@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const xss = require('xss')
-const logger = require('../src/logger');
+const logger = require('../logger');
 const TipsService = require('./tips-service')
 const { getTipValidationError } = require('./validate-tips');
 

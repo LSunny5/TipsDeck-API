@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const xss = require('xss')
-const logger = require('../src/logger');
+const logger = require('../logger');
 const CategoriesService = require('./categories-service')
 const {getCategoryValidationError} = require('./validate-category');
 
