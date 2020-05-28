@@ -3,6 +3,9 @@
 ## Client
 In use with the TipsDeck React Client located at https://github.com/LSunny5/TipsDeck-App 
 
+## React App
+Link to the Live App:  https://tipsdeck.now.sh/
+
 ## Description 
 TipsDeck is a site where you can see a compilation of tips and life hacks that can solve everyday problems without extra tools.  These solutions sometimes fare better than the tools on the market.  This API allows the client to obtain data  from the database and display the results on the client.  
 
